@@ -1,0 +1,33 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session {{ session_id }}</title>
+</head>
+<body>
+    <h1>Session {{ session_id }}</h1>
+    <textarea id="content"></textarea>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://' + document.domain + ':' + location.port, { withCredentials: true });
+
+        socket.on('connect', function() {
+            console.log('Connected to server');
+        });
+
+        socket.on('content_updated', function(data) {
+            if (data.session_id == '{{ session_id }}') {
+                document.getElementById('content').value = data.content;
+            }
+        });
+
+        var contentTextarea = document.getElementById('content');
+
+        contentTextarea.addEventListener('input', function() {
+            var content = this.value;
+            socket.emit('update_content', {'session_id': '{{ session_id }}', 'content': content});
+        });
+    </script>
+</body>
+</html> -->
