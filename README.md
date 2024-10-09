@@ -19,3 +19,5 @@ It is a real-time collaborative text editing platform where multiple users can j
 **Flask**
 
 **SocketIO**
+
+**HTML5**
